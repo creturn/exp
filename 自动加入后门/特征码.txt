@@ -1,0 +1,44 @@
+function switchCms($cmsName){
+	$code = array();
+	switch ($cmsName) {
+		case 'phpcmsV9':
+				$code['path']		= 'phpcms/modules/admin/index.php';
+				$code['keyword'] 	= "showmessage(L('login_success'),'?m=admin&c=index');";
+				$code['bedeck'] 	= "\n\t\t\t";
+				$code['uname'] 		= 'username';
+				$code['pwd']		= 'password';
+				$code['mothed'] 	= 'post';
+			break;
+		case 'dedecms':
+			break;
+		case 'dz':
+				$code['path']		= 'source/class/class_admincp.php';
+				$code['keyword']	= "\$cpgroupid = DB::result_first";
+				$code['bedeck']		= "\n\t\t\t\t\t";
+				$code['uname']		= 'admin_username';
+				$code['pwd']		= 'admin_password';
+				$code['mothed']		= 'post';
+			break;
+		case 'phpwind':
+				$code['path']		= 'admin/admincp.php';
+				$code['keyword'] 	= "\$REQUEST_URI = trim(\$REQUEST_URI,'?#');";
+				$code['bedeck'] 	= "\n\t";
+				$code['uname'] 		= 'admin_name';
+				$code['pwd']		= 'admin_pwd';
+				$code['mothed'] 	= 'post';
+			break;
+		case 'wordpress':
+				$code['path']		= 'admin/admincp.php';
+				$code['keyword'] 	= "\$REQUEST_URI = trim(\$REQUEST_URI,'?#');";
+				$code['bedeck'] 	= "\n\t";
+				$code['uname'] 		= 'admin_name';
+				$code['pwd']		= 'admin_pwd';
+				$code['mothed'] 	= 'post';
+			break;
+		default:
+			;
+		break;
+	}
+	return $code;
+	
+}
